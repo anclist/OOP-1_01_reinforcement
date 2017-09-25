@@ -13,8 +13,11 @@ venues = [
 #Find the possible venues that are wheelchair accessible, in Toronto,
 #and can fit at least 150 people. These results should be stored in an array.
 
-
+accessible_venues_toronto = []
 venues.each do |venue|
-  venue[:city] == "Toronto"
-
+  if venue[:city] == "Toronto" && venue[:wheelchair_accessible] == true && venue[:capacity] >= 150
+    accessible_venues_toronto.push(venue)
+  end
 end
+
+p accessible_venues_toronto
